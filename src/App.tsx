@@ -63,24 +63,24 @@ const App: React.FC = () => {
     return (
         <div className="App">
             <div className="container">
-                <h1>Weather App</h1>
+                <h1>WEATHER</h1>
 
                 <form onSubmit={handleSubmit} className="search-form">
                     <input
                         type="text"
                         value={city}
                         onChange={(e) => setCity(e.target.value)}
-                        placeholder="Enter city name..."
+                        placeholder="search city..."
                         className="city-input"
                     />
                     <button type="submit" className="search-button">
-                        Get Weather
+                        Search
                     </button>
                 </form>
 
-                {loading && <div className="loading">Loading...</div>}
+                {loading && <div className="loading">LOADING</div>}
 
-                {error && <div className="error">{error}</div>}
+                {error && <div className="error">ERROR: {error}</div>}
 
                 {weatherData && (
                     <div className="weather-card">
@@ -91,7 +91,7 @@ const App: React.FC = () => {
                                 alt={weatherData.weather[0].description}
                             />
                             <div className="temperature">
-                                {Math.round(weatherData.main.temp)}°C
+                                {Math.round(weatherData.main.temp)}°
                             </div>
                         </div>
                         <div className="weather-description">
@@ -99,15 +99,15 @@ const App: React.FC = () => {
                         </div>
                         <div className="weather-details">
                             <div className="detail">
-                                <strong>Feels like:</strong>{" "}
+                                <strong>Feels like</strong>
                                 {Math.round(weatherData.main.feels_like)}°C
                             </div>
                             <div className="detail">
-                                <strong>Humidity:</strong>{" "}
+                                <strong>Humidity</strong>
                                 {weatherData.main.humidity}%
                             </div>
                             <div className="detail">
-                                <strong>Wind Speed:</strong>{" "}
+                                <strong>Wind Speed</strong>
                                 {weatherData.wind.speed} m/s
                             </div>
                         </div>
